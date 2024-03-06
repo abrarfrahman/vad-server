@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Activity Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #333;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 16px;
+            margin: 0 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Voice Activity Detection</h1>
+    <p>Choose one of the options below to detect voice activity:</p>
+    <div class="container">
+        <form action="/record" method="POST">
+            <button class="button" type="submit">Record Using Microphone</button>
+        </form>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" id="file" style="display: none;">
+            <label for="file" class="button">Upload Audio File</label>
+        </form>
+    </div>
+</body>
+</html>

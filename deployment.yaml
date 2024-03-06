@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vad-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vad-server
+  template:
+    metadata:
+      labels:
+        app: vad-server
+    spec:
+      containers:
+      - name: vad-server
+        image: gcr.io/happyrobot-th/vad-server:latest
+        ports:
+        - containerPort: 8080
